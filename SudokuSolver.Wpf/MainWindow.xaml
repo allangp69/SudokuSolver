@@ -1,0 +1,58 @@
+﻿<Window x:Class="SudokuSolver.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SudokuSolver.Wpf"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        Title="Sudoku Solver" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="Board">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <local:SudokuSquare x:Name="Square1" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square1ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <local:SudokuSquare x:Name="Square2" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square2ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <local:SudokuSquare x:Name="Square3" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square3ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <local:SudokuSquare x:Name="Square4" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square4ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <local:SudokuSquare x:Name="Square5" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square5ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <local:SudokuSquare x:Name="Square6" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square6ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <local:SudokuSquare x:Name="Square7" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square7ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <local:SudokuSquare x:Name="Square8" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square8ViewModel}" />
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <local:SudokuSquare x:Name="Square9" Margin="{StaticResource GlobalSquareMargin}" DataContext="{Binding .Square9ViewModel}" />
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <Button Content="Solve" Height="40" Width="90" Margin="10" Command="{Binding SolveCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>
